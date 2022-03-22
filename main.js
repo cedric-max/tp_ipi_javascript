@@ -3,6 +3,7 @@
 /* Variables */
 const inputAdd = document.getElementById("toAdd");
 const btnDeleteOne = document.getElementById("deleteOne");
+const btnDeleteAll = document.getElementById("delete")
 const popup = document.getElementById("popup");
 const popupEnd = document.getElementById("closePopup");
 const toDelete = document.getElementById("toDelete");
@@ -51,6 +52,7 @@ function addItemTab(event) {
  * affiche la popoup de suppréssion d'element dans la liste
  */
 btnDeleteOne.addEventListener("click", clickPopup)
+btnDeleteAll.addEventListener("click", deleteAll)
 popupEnd.addEventListener("click", killPopup)
 btnDelete.addEventListener("click", deleteItem)
 
@@ -61,6 +63,12 @@ function clickPopup(event) {
 }function killPopup(event) {
     popup.classList.toggle("hide");
     console.log("killPop "+course)
+}
+
+function deleteAll(){
+    course = [];
+    listCourse.innerHTML = '';
+    listItem();
 }
 
 /**
